@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"               integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="               crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <title>To do list</title>
+  </head>
+  <script src="info.js"></script>
+  <style>
+    label {
+	  display: inline-block;
+	  width: 140px;
+	  text-align: left;
+	}
+	.block {
+	  border: thin solid black;
+	}
+	#MainPage {
+	  width: 90%;
+	  margin: auto;
+	}
+	#divboi {
+	  padding-bottom: 10px;
+	}
+	#pageTitle {
+	  text-align: center;
+	  margin: 20px;
+	}
+	#ansdiv {
+	  margin: 20px;
+	}
+  </style>
+  <body style="background:#f5f5f0">
+    
+  <h1 class="col" style="font-family:arial;" id="pageTitle">Basic To-Do List</h1>
+  <div id="MainPage" class="row justify-content-center">
+
+	
+	<div class="col-sm-4 block" id="divboi">
+	  <h3>To-Do</h3>
+	  <form method="post" class="col" action="javascript:getAnswer()">
+	    <div class="form-row">
+	      <div class="col">
+		    <label for="entry">Entry:</label>
+		    <input type="text" class="form-control" id="entry" placeholder="What to do...." required>
+		  </div>
+        </div><br>
+	    <div class="col">
+		  <button type="submit" class="btn btn-outline-primary">Add</button>
+		  <button type="reset" onClick="hideEntry()" class="btn btn-outline-primary">Clear</button>
+		  <button type="button" onClick="clearList()" class="btn btn-outline-primary">Clear List</button>
+	    </div><br>
+		<form>
+		  <table class="col" id="resultList">
+			<tr>
+			  <th>Done?</th>
+			  <th>Items To Do</th>
+			</tr>
+		  </table>
+		  <button type="button" onClick="deleteItem()" class="btn btn-outline-primary">Delete</button>
+		  <button type="button" onClick="moveDone()" class="btn btn-outline-primary">Done</button>
+	    </form>
+	</div>
+	
+	<div class="col-sm-4 block"><span id="divboi"></span>
+	  <h3>Done</h3>
+	  <table class="col" id="doneList">
+	  
+	  </table>
+	  <button type="button" onClick="deleteDone()" class="btn btn-outline-primary">Delete</button>
+	</div>
+  </div>
+  </body>
+</html>
