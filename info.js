@@ -27,10 +27,17 @@ function deleteItem() {
 	items.closest('tr').remove();
 }
 /*
- * This will move items from to do over to done.
+ * This will move items over to in progress
+ */
+function moveInProgress() {
+	let items = $("#resultList").find('input:checked');
+	$("#inProgress").append(items.closest('tr'));
+}
+/*
+ * This will move items over to done.
  */
 function moveDone() {
-	let items = $("#resultList").find('input:checked');
+	let items = $("#inProgress").find('input:checked');
 	$("#doneList").append(items.closest('tr'));
 }
 /*
@@ -39,4 +46,11 @@ function moveDone() {
 function deleteDone() {
 	let items = $("#doneList").find('input:checked');
 	items.closest('tr').remove();
+}
+/*
+ * This will move items from in progress back to the backlog.
+ */
+function moveToBacklog() {
+	let items = $("#inProgress").find('input:checked');
+	$("#resultList").append(items.closest('tr'));
 }
