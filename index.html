@@ -20,7 +20,7 @@
 	  text-align: left;
 	}
 	.block {
-	  border: none;
+	  border: thin solid black;
 	}
 	#MainPage {
 	  width: 90%;
@@ -37,26 +37,28 @@
 	  margin: 20px;
 	}
   </style>
-  <body style="background:#FFFFFF">
+  <body style="background:#f5f5f0">
     
   <h1 class="col" style="font-family:arial;" id="pageTitle">Basic To-Do List</h1>
   
   <div id="MainPage" class="row justify-content-center">
-	<div class="col-4" id="divboi">
+	<div class="col-4 block" id="divboi">
 	  <form method="post" class="col" action="javascript:getAnswer()">
 	    <div class="form-row">
-		  <label for="entry" class="col-8">Entry:</label>
-		  <label for="priorityValue" class="col-4">Priority:</label>
-	      <div class="col-8">
+		  <label for="entry" class="col-10">Entry:</label>
+		  <label for="priorityValue" class="col-2">Priority:</label>
+	      <div class="col-10">
 			<input type="text" class="form-control" id="entry" placeholder="What to do...." required>
 		  </div>
-		  <div class="col-4">
-			<select id="priorityValue"> 
+		  <div class="col-2">
+			<select id="priorityValue" class="form-control"> 
 				<option value="1">1</option>
 				<option value="2">2</option>
 				<option value="3">3</option>
 			</select>
 		  </div>
+		  <label for="dueDate" class="col-12">Due Date:</label>
+		  <input type="date" class="form-control col-6" id="dueDate">
         </div><br>
 		<button type="submit" class="btn btn-outline-primary">Add</button>
 		<button type="reset" onClick="hideEntry()" class="btn btn-outline-primary">Clear</button>
@@ -64,13 +66,14 @@
 	</div>
 	
 	<div class="col-12 row">
-	  <div class="col-sm-4 block" id="divboi">
+	  <div class="col-sm-4" id="divboi">
 	    <h3>Backlog</h3>
 	    <table class="col" id="resultList">
 	  	  <tr>
-	        <th>Done?</th>
+	        <th>Select</th>
 			<th>Items To Do</th>
 			<th>Priority</th>
+			<th>Due Date</th>
 		  </tr>
 	    </table>
 	    <button type="button" onClick="deleteItem()" class="btn btn-outline-primary">Delete</button>
@@ -79,23 +82,25 @@
 	    <button type="button" onClick="moveInProgress()" class="btn btn-outline-primary">In-Progress</button>
 	  </div>
 	
-	  <div class="col-sm-4 block"><span id="divboi"></span>
+	  <div class="col-sm-4"><span id="divboi"></span>
 	    <h3>In Progress</h3>
 	    <table class="col" id="inProgress">
-			<th>Complete?</th>
+			<th>Select</th>
 			<th>Item In Progress</th>
 			<th>Priority</th>
+			<th>Due Date</th>
 	    </table>
 	    <button type="button" onClick="moveToBacklog()" class="btn btn-outline-primary">Backlog</button>
 	    <button type="button" onClick="moveDone()" class="btn btn-outline-primary">Done</button>
 	  </div>
 	
-	  <div class="col-sm-4 block"><span id="divboi"></span>
+	  <div class="col-sm-4"><span id="divboi"></span>
 	    <h3>Done</h3>
 	    <table class="col" id="doneList">
-			<th>Remove From List</th>
+			<th>Select</th>
 			<th>Finshed Item</th>
 			<th>Priority</th>
+			<th>Due Date</th>
 	    </table>
 	    <button type="button" onClick="deleteDone()" class="btn btn-outline-primary">Delete</button>
 	  </div>

@@ -11,14 +11,17 @@ function hideEntry() {
 function getAnswer() {
 	let val = $("#entry").val();
 	let priorityVal = $("#priorityValue").val();
-	$("#resultList tr:last").after("<tr><td><input type='checkbox'></td><td style='word-break:break-word'>" + val + "</td><td>" + priorityVal + "</td></tr>");
+	let dueDate = $("#dueDate").val();
+	$("#resultList tr:last").after("<tr><td><input type='checkbox'></td><td style='word-break:break-word'>" + val 
+									+ "</td><td>" + priorityVal + "</td><td>" + dueDate + "</td></tr>");
 }
 /*
  * This will clear the list of things to do 
  */
 function clearList() {
 	$("#resultList").empty();
-	$("#resultList").append("<tr><th>Done?</th><th>Items To Do</th></tr>");
+	$("#resultList").append("<tr><th>Done?</th><th>Items To Do</th>" +
+							"<th>Priority</th><th>Due Date</th></tr>");
 }
 /*
  * This will delete items that are checked off in the to do list
