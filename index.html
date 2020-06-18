@@ -45,9 +45,12 @@
 	<div class="col-4" id="divboi">
 	  <form method="post" class="col" action="javascript:getAnswer()">
 	    <div class="form-row">
-	      <div class="col">
-		    <label for="entry">Entry:</label>
+		  <label for="entry" class="col-8">Entry:</label>
+		  <label for="priorityValue" class="col-4">Priority:</label>
+	      <div class="col-8">
 			<input type="text" class="form-control" id="entry" placeholder="What to do...." required>
+		  </div>
+		  <div class="col-4">
 			<select id="priorityValue"> 
 				<option value="1">1</option>
 				<option value="2">2</option>
@@ -55,10 +58,8 @@
 			</select>
 		  </div>
         </div><br>
-	    <div class="col">
-		  <button type="submit" class="btn btn-outline-primary">Add</button>
-		  <button type="reset" onClick="hideEntry()" class="btn btn-outline-primary">Clear</button>
-	    </div><br>
+		<button type="submit" class="btn btn-outline-primary">Add</button>
+		<button type="reset" onClick="hideEntry()" class="btn btn-outline-primary">Clear</button>
 	  </form>
 	</div>
 	
