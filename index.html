@@ -47,7 +47,12 @@
 	    <div class="form-row">
 	      <div class="col">
 		    <label for="entry">Entry:</label>
-		    <input type="text" class="form-control" id="entry" placeholder="What to do...." required>
+			<input type="text" class="form-control" id="entry" placeholder="What to do...." required>
+			<select id="priorityValue"> 
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+			</select>
 		  </div>
         </div><br>
 	    <div class="col">
@@ -63,7 +68,8 @@
 	    <table class="col" id="resultList">
 	  	  <tr>
 	        <th>Done?</th>
-            <th>Items To Do</th>
+			<th>Items To Do</th>
+			<th>Priority</th>
 		  </tr>
 	    </table>
 	    <button type="button" onClick="deleteItem()" class="btn btn-outline-primary">Delete</button>
@@ -75,7 +81,9 @@
 	  <div class="col-sm-4 block"><span id="divboi"></span>
 	    <h3>In Progress</h3>
 	    <table class="col" id="inProgress">
-	  
+			<th>Complete?</th>
+			<th>Item In Progress</th>
+			<th>Priority</th>
 	    </table>
 	    <button type="button" onClick="moveToBacklog()" class="btn btn-outline-primary">Backlog</button>
 	    <button type="button" onClick="moveDone()" class="btn btn-outline-primary">Done</button>
@@ -84,7 +92,9 @@
 	  <div class="col-sm-4 block"><span id="divboi"></span>
 	    <h3>Done</h3>
 	    <table class="col" id="doneList">
-	  
+			<th>Remove From List</th>
+			<th>Finshed Item</th>
+			<th>Priority</th>
 	    </table>
 	    <button type="button" onClick="deleteDone()" class="btn btn-outline-primary">Delete</button>
 	  </div>
