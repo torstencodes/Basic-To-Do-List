@@ -11,7 +11,7 @@ function hideEntry() {
 function getAnswer() {
 	let val = $("#entry").val();
 	let priorityVal = $("#priorityValue").val();
-	$("#resultList tr:last").after("<tr><td><input type='checkbox'></td><td>" + val + "</td><td>" + priorityVal + "</td></tr>");
+	$("#resultList tr:last").after("<tr><td><input type='checkbox'></td><td style='word-break:break-word'>" + val + "</td><td>" + priorityVal + "</td></tr>");
 }
 /*
  * This will clear the list of things to do 
