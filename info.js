@@ -20,7 +20,19 @@ function getAnswer() {
  */
 function clearList() {
 	$("#resultList").empty();
-	$("#resultList").append("<tr><th>Done?</th><th>Items To Do</th>" +
+	$("#resultList").append("<tr><th>Select</th><th>Items To Do</th>" +
+							"<th>Priority</th><th>Due Date</th></tr>");
+}
+
+function clearProgress() {
+	$("#inProgress").empty();
+	$("#inProgress").append("<tr><th>Select</th><th>Items In Progress</th>" +
+							"<th>Priority</th><th>Due Date</th></tr>");
+}
+
+function clearDone() {
+	$("#doneList").empty();
+	$("#doneList").append("<tr><th>Select</th><th>Finished Items</th>" +
 							"<th>Priority</th><th>Due Date</th></tr>");
 }
 /*
@@ -38,6 +50,13 @@ function moveInProgress() {
 	$("#inProgress").append(items.closest('tr'));
 }
 /*
+ * This will move items over to in progress
+ */
+function moveInProgressDone() {
+	let items = $("#doneList").find('input:checked');
+	$("#inProgress").append(items.closest('tr'));
+}
+/*
  * This will move items over to done.
  */
 function moveDone() {
@@ -49,6 +68,10 @@ function moveDone() {
  */ 
 function deleteDone() {
 	let items = $("#doneList").find('input:checked');
+	items.closest('tr').remove();
+}
+function deleteProgress() {
+	let items = $("#inProgress").find('input:checked');
 	items.closest('tr').remove();
 }
 /*
